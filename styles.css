@@ -25,8 +25,7 @@ body {
     background-position: center;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
-}
-
+  }
 .content {
     width: 40%;
     padding: 40px;
@@ -55,32 +54,30 @@ img {
     height: auto;
     border-radius: 10px;
 }
-
 .page {
-    min-height: 100vh; /* 确保每个页面至少占据整个视口高度 */
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative; /* 修改为 relative */
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     opacity: 0;
     transition: opacity 0.5s ease, transform 0.5s ease;
     transform: translateZ(-500px) scale(0.9);
 }
-
 .page.active {
     opacity: 1;
     transform: translateZ(0) scale(1);
 }
-
 .quote {
     font-size: 18px;
     margin: 20px;
     max-width: 600px;
     text-align: center;
 }
-
 .arrow {
     position: fixed;
     bottom: 20px;
@@ -92,11 +89,9 @@ img {
     opacity: 0.8;
     transition: opacity 0.3s;
 }
-
 .arrow:hover {
     opacity: 1;
 }
-
 .footer {
     position: absolute;
     bottom: 10px;
@@ -104,13 +99,11 @@ img {
     text-align: center;
     font-size: 12px;
 }
-
 .footer a {
     color: #c9d1d9;
     margin: 0 5px;
     text-decoration: none;
 }
-
 .footer a:hover {
     text-decoration: underline;
 }
@@ -131,4 +124,61 @@ img {
 .font-white {
     font-family: 'MiSans-Bold', sans-serif;
     color: white;
+}
+
+.dashboard {
+    width: 400px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin: 100px auto;
+    padding: 20px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.header h2 {
+    margin: 0;
+    font-size: 18px;
+}
+.header .close-btn {
+    cursor: pointer;
+    font-size: 18px;
+    color: #999;
+    transition: color 0.3s;
+}
+.header .close-btn:hover {
+    color: red;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.card {
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+.card:hover {
+    background-color: #d0d0d0;
+}
+.card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+.card h3 {
+    margin: 0;
+    font-size: 16px;
+}
+.card p {
+    margin: 5px 0 0;
+    color: #666;
 }
