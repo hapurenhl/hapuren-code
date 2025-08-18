@@ -39,7 +39,7 @@
 
 ### 转跳页
 
-本页的`X`在点击悬停时变为红色，在点击时`ゆずソフト厨`将会看见`Ciallo～ (∠・ω< )⌒★`弹窗，并在`1`秒后转跳到 [https://ciallo.hapuren.cn/](ttps://ciallo.hapuren.cn/)
+本页的`X`在点击悬停时变为红色，在点击时`ゆずソフト厨`将会看见`Ciallo～ (∠・ω< )⌒★`弹窗，并在`1`秒后转跳到 [https://ciallo.hapuren.cn/](https://ciallo.hapuren.cn/)
 
 * 可在`script.js`中第39行进行修改弹窗内容
 
