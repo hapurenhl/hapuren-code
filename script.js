@@ -36,7 +36,10 @@ window.addEventListener('wheel', function(event) {
 const closeBtn = document.querySelector('.close-btn');
 if (closeBtn) {
     closeBtn.addEventListener('click', () => {
-        alert('Close button clicked!');
+        alert('Ciallo～ (∠・ω< )⌒★');
+        setTimeout(() => {
+            window.location.href = 'https://ciallo.hapuren.cn/';
+        }, 1000);
     });
 }
 
