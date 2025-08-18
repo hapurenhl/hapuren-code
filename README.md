@@ -39,13 +39,17 @@
 
 ### 转跳页
 
-本页的`X`在点击悬停时变为红色，在点击时`ゆずソフト厨`将会看见`Ciallo～ (∠・ω< )⌒★`弹窗，并在`1`秒后转跳到 [https://ciallo.hapuren.cn/](https://ciallo.hapuren.cn/)
+本页的`X`在点击悬停时变为红色，在点击时`ゆずソフト厨`将会看见`Ciallo～ (∠・ω< )⌒★`弹窗，并在`1`秒后转跳到 [https://ciallo.hapuren.cn/](ttps://ciallo.hapuren.cn/)
 
 * 可在`script.js`中第39行进行修改弹窗内容
 
 * 可在`script.js`中第41行进行修改弹窗转跳网页，如 [https://ciallo.cc/](https://ciallo.cc/)等网站
 
 ## 版权声明
+
+### 关于字体
+
+本开源项目中部分字体使用了 [MiSans](https://hyperos.mi.com/font/zh/) 字体！
 
 ### 主页面版权
 
