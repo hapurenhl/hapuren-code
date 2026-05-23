@@ -2,6 +2,8 @@
 
 一个简洁开源的个人网站代码
 
+![image](https://count.getloli.com/@hapuren?name=hapuren&theme=rule34&padding=7&offset=0&align=top&scale=1&pixelated=1&darkmode=auto)
+
 ## 技术栈
 
 ![image](https://img.shields.io/badge/CSS-position-green)
