@@ -8,6 +8,26 @@
 
 </head>
 <body>
+    <script>
+        (function() {
+            var ua = navigator.userAgent.toLowerCase();
+
+            // 检测平板 (只使用 User-Agent)
+            var isTablet = /ipad|tablet|kindle|playbook|silk|nexus|galaxy|surface|windows\s*rt/.test(ua);
+
+            // 平板跳转到 mp.html
+            if (isTablet) {
+                window.location.href = 'mp.html';
+                return;
+            }
+
+            // 手机只使用屏幕尺寸判断 (即使开启电脑模式也能正确跳转)
+            if (window.screen.width < 768) {
+                window.location.href = 'mp.html';
+                return;
+            }
+        })();
+    </script>
     <div class="page active" id="page1">
         <h1>哈葡人</h1>
         <div class="quote">

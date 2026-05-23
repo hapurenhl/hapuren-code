@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>哈葡人的网站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-container {
+            width: 100%;
+            max-width: 480px;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .avatar {
+            width: 60%;
+            max-width: 200px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #30363d;
+            margin-bottom: 20px;
+            background-color: #161b22;
+        }
+
+        .name {
+            font-size: 26px;
+            font-weight: 600;
+            color: #f0f6fc;
+            margin-bottom: 6px;
+        }
+
+        .username {
+            font-size: 20px;
+            font-weight: 300;
+            color: #8b949e;
+            margin-bottom: 16px;
+        }
+
+        .bio {
+            font-size: 16px;
+            color: #8b949e;
+            text-align: center;
+            line-height: 1.6;
+            margin-bottom: 8px;
+            padding: 0 10px;
+        }
+
+        .bio-from {
+            font-size: 14px;
+            color: #6e7681;
+            text-align: center;
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .links-section {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .link-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background-color: #21262d;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            color: #c9d1d9;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+
+        .link-btn:active {
+            background-color: #30363d;
+            border-color: #8b949e;
+        }
+
+        .link-btn img {
+            width: 22px;
+            height: 22px;
+        }
+
+        .beian {
+            text-align: center;
+            font-size: 12px;
+            color: #8b949e;
+            line-height: 1.8;
+            margin-top: 10px;
+        }
+
+        .beian a {
+            color: #8b949e;
+            text-decoration: none;
+        }
+
+        .beian a:active {
+            color: #c9d1d9;
+        }
+
+        .copyright {
+            text-align: center;
+            font-size: 12px;
+            color: #8b949e;
+            margin-top: 10px;
+        }
+
+        .copyright a {
+            color: #8b949e;
+            text-decoration: none;
+        }
+
+        .copyright a:active {
+            color: #c9d1d9;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <img class="avatar" src="https://cdn.hapuren.cn/cdn/imge/tx.png" alt="avatar" loading="lazy">
+
+        <h1 class="name">哈葡人</h1>
+        <p class="username">Hapuren</p>
+
+        <p class="bio" id="hitokoto">加载中...</p>
+        <p class="bio-from" id="from"></p>
+
+        <div class="links-section">
+            <a class="link-btn" href="https://github.com/hapurenhl">
+                <img src="./svg/01.svg" alt="GitHub">
+                GitHub
+            </a>
+            <a class="link-btn" href="https://space.bilibili.com/1540160220?spm_id_from=333.1007.0.0">
+                <img src="./svg/02.svg" alt="BiliBili">
+                BiliBili
+            </a>
+            <a class="link-btn" href="https://blog.hapuren.cn/">
+                <img src="./svg/03.svg" alt="Blog">
+                Blog
+            </a>
+            <a class="link-btn" href="https://api.hapuren.cn/">
+                <img src="./svg/04.svg" alt="API">
+                API
+            </a>
+        </div>
+
+        <div class="beian">
+            <p>© Hapuren - 2025 - Designed by <a href="https://www.hapuren.cn">www.hapuren.cn</a> in China</p>
+            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">豫ICP备2023018730号-1</a>
+        </div>
+
+        <div class="copyright">
+            <p>本网站使用 <a href="https://www.gnu.org/licenses/gpl-3.0.txt">GNU GENERAL PUBLIC LICENSE Version 3</a> 许可证</p>
+            <p>开源地址：<a href="https://github.com/hapurenhl/hapuren-code">Github</a></p>
+            <p>Copyright © <a href="https://www.hapuren.cn">Hapuren</a>. All Rights Reserved.</p>
+        </div>
+    </div>
+    <script>
+        fetch('https://api.hapuren.cn/ht/')
+            .then(function(response) { return response.json(); })
+            .then(function(data) {
+                document.getElementById('hitokoto').textContent = data.hitokoto;
+                if (data.from) {
+                    document.getElementById('from').textContent = '——' + data.from;
+                }
+            })
+            .catch(function() {
+                document.getElementById('hitokoto').textContent = '加载失败，请稍后再试';
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教室植物收集表单</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border-left: 5px solid #28a745;
+        }
+
+        .section-title {
+            color: #28a745;
+            font-size: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: "🌱";
+            margin-right: 10px;
+            font-size: 24px;
+        }
+
+        .form-section.flower-section {
+            border-left-color: #e83e8c;
+        }
+
+        .flower-section .section-title {
+            color: #e83e8c;
+        }
+
+        .flower-section .section-title::before {
+            content: "🌸";
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .required {
+            color: #dc3545;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        input[type="text"]:invalid {
+            border-color: #dc3545;
+        }
+
+        input[type="text"]:valid {
+            border-color: #28a745;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+        }
+
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .form-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>教室植物收集表单</h1>
+        <p class="subtitle">请分享您认为适合在教室养殖的植物建议</p>
+        
+        <form id="plantForm">
+            <!-- 多肉类植物部分 -->
+            <div class="form-section">
+                <h2 class="section-title">多肉类植物</h2>
+                
+                <div class="form-group">
+                    <label for="succulent1">多肉植物名称 1 <span class="required">*</span></label>
+                    <input type="text" id="succulent1" name="succulent1" required placeholder="例如：仙人掌">
+                </div>
+                
+                <div class="form-group">
+                    <label for="succulent2">多肉植物名称 2 <span class="required">*</span></label>
+                    <input type="text" id="succulent2" name="succulent2" required placeholder="例如：多肉植物">
+                </div>
+            </div>
+
+            <!-- 花卉类植物部分 -->
+            <div class="form-section flower-section">
+                <h2 class="section-title">花卉类植物</h2>
+                
+                <div class="form-group">
+                    <label for="flower1">花卉植物名称 1 <span class="required">*</span></label>
+                    <input type="text" id="flower1" name="flower1" required placeholder="例如：绿萝">
+                </div>
+                
+                <div class="form-group">
+                    <label for="flower2">花卉植物名称 2 <span class="required">*</span></label>
+                    <input type="text" id="flower2" name="flower2" required placeholder="例如：吊兰">
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">提交建议</button>
+        </form>
+
+        <div id="successMessage" class="success-message">
+            ✅ 提交成功！文件已生成并开始下载。
+        </div>
+
+        <div id="errorMessage" class="error-message">
+            ❌ 请填写所有必填项目！
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('plantForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // 获取表单数据
+            const succulent1 = document.getElementById('succulent1').value.trim();
+            const succulent2 = document.getElementById('succulent2').value.trim();
+            const flower1 = document.getElementById('flower1').value.trim();
+            const flower2 = document.getElementById('flower2').value.trim();
+            
+            // 验证所有必填字段
+            if (!succulent1 || !succulent2 || !flower1 || !flower2) {
+                showMessage('errorMessage');
+                return;
+            }
+            
+            // 创建多肉植物文件内容
+            const succulentContent = `${succulent1} ${succulent2}\n`;
+            
+            // 创建花卉植物文件内容
+            const flowerContent = `${flower1} ${flower2}\n`;
+            
+            // 生成并下载多肉植物文件
+            downloadFile(succulentContent, '多肉植物建议.txt');
+            
+            // 生成并下载花卉植物文件
+            downloadFile(flowerContent, '花卉植物建议.txt');
+            
+            // 显示成功消息
+            showMessage('successMessage');
+            
+            // 清空表单
+            this.reset();
+        });
+        
+        function downloadFile(content, filename) {
+            // 创建Blob对象
+            const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+            
+            // 创建下载链接
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+            
+            // 触发下载
+            document.body.appendChild(link);
+            link.click();
+            
+            // 清理
+            document.body.removeChild(link);
+            URL.revokeObjectURL(link.href);
+        }
+        
+        function showMessage(messageId) {
+            const message = document.getElementById(messageId);
+            message.style.display = 'block';
+            
+            // 3秒后隐藏消息
+            setTimeout(() => {
+                message.style.display = 'none';
+            }, 3000);
+        }
+        
+        // 实时验证输入
+        document.querySelectorAll('input[type="text"]').forEach(input => {
+            input.addEventListener('input', function() {
+                if (this.value.trim()) {
+                    this.setCustomValidity('');
+                } else {
+                    this.setCustomValidity('此字段为必填项');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
